@@ -1,0 +1,315 @@
+\documentclass[10pt]{article}
+% set this variable to the assignment number
+\def \HWNUM{n}
+\def \Sus{\begin{tikzpicture}
+\amongUsIII[scale=.05]{red}{blue}
+\end{tikzpicture}}
+\newcommand{\bigpare}[1]{\left( {#1}\right)}
+\newcommand{\MatTwo}[4]{\begin{bmatrix}
+{#1} & {#2}\\
+{#3} & {#4}
+\end{bmatrix}}
+\newcommand{\MatThree}[9]{\begin{bmatrix}
+ {#1}&{#2}&{#3}\\
+ {#4}&{#5}&{#6}\\
+ {#7}&{#8}&{#9}
+\end{bmatrix}}
+\newcommand{\VectorTwo}[2]{\begin{bmatrix}
+{#1}\\
+{#2}
+\end{bmatrix}}
+\newcommand{\VectorThree}[3]{\begin{bmatrix}
+{#1}\\
+{#2}\\
+{#3}
+\end{bmatrix}}
+% set this variable to your name
+\def \MYID{Riya Kore}
+\usepackage{tocloft}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eufrak}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{tikz-among-us}
+\usepackage{fancyhdr}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{ mathrsfs}
+\usepackage{ wasysym }
+\usepackage{enumitem}
+\usepackage{ upgreek }
+\usepackage{ tipa }
+\usepackage{ esint }
+\lstset{ %
+language=python,
+commentstyle=\color{yellow!80!red},
+keywordstyle=\color{blue!50!white},
+stringstyle=\color{green!80!white},
+identifierstyle=\color{red!50!white},
+basicstyle=\small\ttfamily,
+showstringspaces=false
+}
+\topmargin -0.7in
+\oddsidemargin -0.25in
+\evensidemargin -0.25in
+\textwidth 7in
+\textheight 9in
+\begin{document}
+
+% \fancypagestyle{headings}{% changes predefined style
+% \fancyhf{} % clear all header and footer fields
+% \fancyfoot[C]{%
+% \begin{tikzpicture}
+%     \amongUsI[rotate around={45*(\thepage-2):(1.75,2.3)},
+%     scale=0.25, shift={(5,7)}]{red}{cyan};
+%     \node at (1.75,2.3) {\thepage};
+% \end{tikzpicture}}
+% \renewcommand{\headrulewidth}{0pt} % remove line between header and main text
+% }
+
+\pagestyle{headings}
+
+\title{Astronomy 310 Homework 5}
+\author{\MYID\\
+University of Wisconsin-Madison}
+\date{\today}
+\maketitle
+
+\section*{Problem 1}
+Calculate the mean molecular weight for a pure hydrogen/helium mixture with X = 0.4, assuming the hydrogen and helium are both 50\% ionized (i.e. $\mathscr{N}_j$ = 0.5 x $\mathscr{L}_j$, where $\mathscr{N}_j$ and $\mathscr{L}_j$ are defined in Handout 15). \\ \\
+Solution:
+
+\setlength{\parindent}{1cm}
+\begin{quote}
+For a pure hydrogen/helium mixture, if the mass fraction of hydrogen X = 0.4, then the mass fraction of helium should be Y = 1 - 0.4 = 0.6.\\
+Therefore, Y = 0.6\\ \\
+Here, \\$\mathscr{N}_j$ = the average number of free electrons per ion of an isotope\\
+$\mathscr{L}_j$ = atomic number of the isotope\\
+$\mathcal{A}_j$ = mass number of the isotope\\
+
+\[ \mu = \left[ \sum_j {\frac{(1 + \mathscr{N}_j) \ \chi_{j}}{\mathcal{A}_j}} \right]^{-1} \]
+
+\[ \mu = \left[ \sum_j {\frac{(1 + 0.5\mathscr{L}_j) \ \chi_{j}}{\mathcal{A}_j}} \right]^{-1} \]
+
+\[ \mu = \left[ {\frac{(1 + 0.5)X}{1}} + {\frac{(1 + 0.5*2)Y}{4}}\right]^{-1} \]
+
+\[ \mu = \left[ {\frac{(1 + 0.5)0.4}{1}} + {\frac{(1 + 1)0.6}{4}}\right]^{-1} \]
+
+\[ \mu \approx 1.1111 \ \]
+
+The mean molecular weight for a pure hydrogen/helium mixture is 1.1111 
+\end{quote}
+
+\section*{Problem 2}
+By combining the equations [6.4] and [6.8], derive the dependence of temperature T on pressure P for an ideal gas undergoing an adiabatic change. Use this expression to prove equation [13.7].\\ \\
+Solution:
+
+\setlength{\parindent}{1cm}
+\begin{quote}
+The ideal gas equation of state is given by:
+\begin{equation}
+     P = \frac{\rho \kappa_{B} T }{\mu m_{H}}
+\end{equation}
+The expression for pressure in adiabatic conditions is given by:
+\begin{equation}
+    P = K_{ad} \  \rho^{\gamma}
+\end{equation}
+
+Using equation (2), we get:
+\[ P = K_{ad} \  \rho^{\gamma} \]
+\[ \rho^{\gamma} = \frac{P}{K_{ad}}\]
+\begin{equation}
+    \rho = (\frac{P}{K_{ad}})^{\frac{1}{\gamma}}
+\end{equation}
+
+Using equation (1), we get:
+\[ P = \frac{\rho_c \kappa_{B} T_{c} }{\mu m_{H}} \]
+Let's consider c to be a constant such that,
+\[ c = \frac{\kappa_{B}}{\mu m_{H}} \]
+\\ 
+Equation (1) becomes, 
+\[ P = \rho_{c} c T_{c}\]  
+Plugging equation (3) in the above equation, we get:
+\[ P = (\frac{P}{K_{ad}})^{\frac{1}{\gamma}} c T_{c}\]
+
+\[ P = \frac{P^{\frac{1}{\gamma}}}{K_{ad}^{\frac{1}{\gamma}}} c T_{c} \]
+
+\[ T_{c} = \frac{P K_{ad}^{\frac{1}{\gamma}}}{P^{\frac{1}{\gamma}}c}\]
+
+\[ T_{c} = P^{1 - \frac{1}{\gamma}} \ \frac{K_{ad}^{\frac{1}{\gamma}}}{c}\]
+
+Let's consider K to be a constant such that,
+\[ K = \frac{K_{ad}^{\frac{1}{\gamma}}}{c}\]
+\\
+So, the above expression for T becomes,
+\begin{equation}
+    T_{c} = P^{\frac{\gamma - 1}{\gamma}} \ K
+\end{equation}
+Equation (4) is the dependence of temperature T on pressure P for an ideal gas undergoing adiabatic change.
+\\
+Taking the natural log (ln) on both sides of the equation, we get:
+\[ \ln{T} = \ln{P^{\frac{\gamma - 1}{\gamma}}} + \ln{K}\]
+
+\[ \ln{T} = \frac{\gamma - 1}{\gamma} \ln{P} + \ln{K}\]
+
+Differentiating both sides of the equation, we see that the differentiation of $\ln{K}$ becomes 0. Thus, we get:
+\[ \partial  \ln{T} = \frac{\gamma - 1}{\gamma} \partial \ln{P} + 0 \]
+\[ \frac{\partial \ln{T}}{\partial \ln{P}} = \frac{\gamma - 1}{\gamma}\]
+
+As, ${(\frac{\partial \ln{T}}{\partial \ln{P}})}_{ad} = \triangledown_{ad}$, we get:
+\[ \triangledown_{ad} = \frac{\gamma - 1}{\gamma}\]
+
+Hence, proved.
+
+\end{quote}
+
+\section*{Problem 3}
+
+Consider a location within a star where the interior mass and luminosity are given by m = 0.3$M_{\astrosun}$ and $\ell$ = 5$L_{\astrosun}$, respectively; the pressure and temperature are P = $10^{17}$ Ba and T = $10^7$ K, respectively; and the opacity is $\kappa$ = 1 $cm^{2}$ $g^{-1}$.
+\begin{itemize}[label=\textbullet]
+\item Evaluate the radiative temperature gradient $\triangledown_{rad}$.\\ \\
+$\triangledown_{rad}$ is given by:
+\[ \triangledown_{rad} = \frac{3}{16 \pi a c G} \frac{\kappa \ell P}{m T^{4}}\]
+Here,\\
+a = 7.567 x $10^{-15}$ $erg\ cm^{-3} K^{-4}$\\
+c = 2.998 x $10^{10}$ $cm\ s^{-1}$\\
+G = 6.67 x $10^{-8}\ dyne\ cm^{2}g^{-2}$
+\\
+Plugging in the values, we get:
+\[ \triangledown_{rad} = \frac{3 * (1) * (5 * 3.846 * 10^{33}) * 10^{17}}{16* \pi * (7.567 * 10^{-15}) * (2.998 * 10^{10}) * (6.67 * 10^{-8}) * 0.3 * 1.989 * 10^{33} * {(10^{7})}^{4}}\]
+
+\[ \triangledown_{rad} = 3.9443 * 10^{9} * 3.2227 * 10^{-10}\]
+Solving this, you get $\triangledown_{rad}$ as:
+\begin{equation}
+    \triangledown_{rad} = 1.2711   \tag{1}
+\end{equation}
+
+\item Assuming the stellar material behaves as an ideal gas with $\gamma$ = 1.4, evaluate the adiabatic temperature gradient $\triangledown_{ad}$.
+
+\[ \gamma = 1.4 = \frac{7}{5}\] \\
+$\triangledown_{ad}$ is given by:
+\[ \triangledown_{ad} = \frac{\gamma -1}{\gamma} \]
+\[ \triangledown_{ad} = \frac{\frac{7}{5} - 1}{\frac{7}{5}}\]
+\begin{equation}
+    \triangledown_{ad} = \frac{2}{7} = 0.2857 \tag{2}
+\end{equation}
+
+\item By applying the algorithm given in Handout 13, explain why convention will occur at this location.
+\\ \\
+According to the Schwarzchild criterion for convective stability, if $\triangledown_{T} < \triangledown_{ad}$, then there will be no convection. But if $\triangledown_{T} > \triangledown_{ad}$, the inequality gets violated. The material becomes unstable and convection will spontaneously start.\\ \\
+For this star, at the given location in the interior of the star, $\triangledown_{T} = \triangledown_{rad}$, from equations (1) and (2), we get:
+\[ \triangledown_{rad} > \triangledown_{ad}\] \\
+The Schwarzchild criterion inequality gets violated, hence, convection will occur at this location.
+
+\item Assuming a convective efficiency $\upvarphi_{conv}$ = 0.5, evaluate the dimensionless temperature gradient $\triangledown_{T}$ at the location.
+\\ \\
+As $\triangledown_{rad} > \triangledown_{ad}$, the expression for $\triangledown_{T}$ is given by:
+\[ \triangledown_{T} = \upvarphi_{conv} \triangledown_{ad} + (1 - \upvarphi_{conv}) \triangledown_{rad}\]
+
+\[ \triangledown_{T} = 0.5*\frac{2}{7} + (1 - 0.5) * 1.2711\]
+\[ \triangledown_{T} = \frac{1}{7} + 0.63555\]
+\[ \triangledown_{T} = 0.7784\]
+\item Evaluate the convective ($\ell_{conv}$) and ($\ell_{rad}$) interior luminosities, in $L_{\astrosun}$
+\\
+\[ \ell_{rad} = \ell (1 - \frac{\upvarphi_{conv} (\triangledown_{rad} - \triangledown_{ad})}{\triangledown_{rad}})\]
+
+\[ \ell_{rad} = 5L_{\astrosun} (1 - \frac{0.5 (1.2711 - 0.2857)}{1.2711})\]
+\[ \ell_{rad} = 5L_{\astrosun} (1 - 0.3876)\]
+\[ \ell_{rad} = 5L_{\astrosun}*0.6214\]
+\[ \ell_{rad} = 3.062L_{\astrosun}\] \\
+
+\[ \ell_{conv} = \ell (\frac{\upvarphi_{conv} (\triangledown_{rad} - \triangledown_{ad})}{\triangledown_{rad}})\]
+\[ \ell_{conv} = 5L_{\astrosun}*0.3876\]
+\[ \ell_{conv} = 1.938L_{\astrosun}\]\\
+
+One way to check if the answers are correct is to add the $\ell_{rad}$ and $\ell_{conv}$. The answer should be equal to the luminosity at that location within the star. In this case, it should be equal to $5L_{\astrosun}$.
+\[ \ell = \ell_{conv} + \ell_{rad}\]
+\[ \ell = 1.938L_{\astrosun} + 3.062L_{\astrosun}\]
+\[ \ell = 5L_{\astrosun}\]
+\end{itemize}
+
+\section*{Problem 4}
+The central temperature and density of ZAMS stars can be approximated over the stellar mass interval 0.1$M_{\astrosun}$ $\lesssim$ M $\lesssim$ 30$M_{\astrosun}$ by the fits 
+\[ log(T_c/K) \approx 7.10 + 0.38 (M/M_{\astrosun}) \]
+\[ log(\rho_c/g\ cm^{-3}) \approx 1.77 - 0.77 (M/M_{\astrosun}) \]
+Derive corresponding expressions for the gas pressure $P_{gas}$ $\equiv$ $P_{ion}$ + $P_{e}$ (assuming an ideal gas with $\mu$ $\approx$ 0.62) and the radiation pressure $P_{rad}$ at the center. At what stellar mass does radiation pressure begin to exceed gas pressure?\\ \\
+Solution:
+\setlength{\parindent}{1cm}
+\begin{quote}
+The central temperature of the star is given by:
+\[ log(T_c/K) \approx 7.10 + 0.38 (M/M_{\astrosun}) \]
+Taking the antilog on both sides of this equation, we get:
+\[ T_{c} = 10^{7.10 + 0.38(M/M_{\astrosun})}\]
+The central density of the star is given by:
+\[ log(\rho_c/g\ cm^{-3}) \approx 1.77 - 0.77 (M/M_{\astrosun}) \]
+Taking the antilog on both sides of this equation, we get:
+\[ \rho_{c} = 10^{1.77 - 0.77(M/M_{\astrosun})}\]
+The expression for pressure (P) is given by:
+\[ P = \frac{\rho K_{B} T}{\mu m_{H}}\]
+Therefore, 
+\begin{equation}
+    P_{ion} = \frac{\rho_{c} K_{B} T_{c}}{\mu m_{H}} \tag{1}
+\end{equation}
+\begin{equation}
+    P_{e} = \frac{\rho_{c} K_{B} T_{c}}{\mu m_{H}} \tag{2}
+\end{equation}
+
+Because we are assuming the gas to be an ideal gas, $P_{ion} = P_{e}$. So the expression for $P_{gas}$ from equations (1) and (2) becomes:
+\[ P_{gas} = P_{ion} + P_{e}\]
+\[ P_{gas} = \frac{2 \rho_{c} K_{B} T_{c}}{\mu m_{H}}\]
+\[ P_{gas} = \frac{2*10^{1.77 - 0.77(M/M_{\astrosun})} * 1.3807 * 10^{-16} * 10^{7.10 + 0.38(M/M_{\astrosun})}}{0.62 * 1.67 * 10^{-24}}\]
+\[ P_{gas} = 2.66698 * 10^8 * 10^{8.87 - 0.39(M/M_{\astrosun})}\]
+
+This is the expression for the gas pressure at the center.\\ \\
+The radiation pressure is given by the expression:
+\begin{equation}
+    P_{rad} = \frac{aT^4}{3}  \tag{3}
+\end{equation}
+Plugging in the values in equation (3), we get:
+\[ P_{rad} = \frac{7.567 * 10^{-15} * 10^{4(7.1 + 0.38(M/M_{\astrosun})}}{3} \]
+\[ P_{rad} = 2.5223 * 10^{-15} * 10^{28.4 + 1.52(M/M_{\astrosun})} \]
+This is the expression for the radiation pressure at the center of the star.\\ \\
+If we want to find the stellar mass at which the radiation pressure begins to exceed the gas pressure, we can set the two quantities equal to each other. This way we can get the exact value of the mass at which this happens.
+\[ P_{rad} = P_{gas}\]
+\[ 2.5223 * 10^{-15} * 10^{28.4 + 1.52(M/M_{\astrosun})} = 2.66698 * 10^8 * 10^{8.87 - 0.39(M/M_{\astrosun})} \]
+\[ \frac{10^{28.4 + 1.52(M/M_{\astrosun})}}{10^{8.87 - 0.39(M/M_{\astrosun})}} = \frac{2.66698 * 10^8}{2.5223 * 10^{-15}}\]
+\[ 10^{19.53 + 1.91(M/M_{\astrosun})} = 1.06 * 10^{23}\]
+\[ 19.53 + 1.91(M/M_{\astrosun}) = \log_{10}{1.06*10^{23}}\]
+\[ 19.53 + 1.91(M/M_{\astrosun}) = 22.61\]
+\[ 1.91(M/M_{\astrosun}) = 3.08\]
+\[ \frac{M}{M_{\astrosun}} = \frac{3.08}{1.91}\]
+\[ M = 1.61 M_{\astrosun}\]
+For stars that have $M \gtrsim 1.61M_{\astrosun}$, the radiation pressure becomes important, i.e it starts exceeding the gas pressure. 
+\end{quote}
+
+\section*{Problem 5}
+For a free electron gas in a completely degenerate limit, use your knowledge of the momentum distribution function $f_{e}$(p) to determine what fraction of of the electrons have momenta less than half of the Fermi momentum $p_{F}$, and what fraction have momenta more than double the Fermi momentum.\\ \\
+Solution:\\
+\setlength{\parindent}{1cm}
+\begin{quote}
+    For a completely degenerate limit, $\psi$ is large and positive, so the function for $f_{e}$(p) is given by:
+    \begin{equation}
+        f_{e}(p) =
+        \begin{cases}
+            \frac{8\pi p^{2}}{h^3} & \text{ p $ < p_{F}$}\\  \tag{1}
+            0 & \text{ p $ > p_{F}$}
+        \end{cases}
+    \end{equation}
+
+    (a) We need to find what fraction of electrons have a momenta less than half of the Fermi momentum. This means we have have find the area under the curve of figure (16.2) in the Handout from p = 0 up to p = $0.5 p_{F}$
+    \[ f_{e}(0.5 p_{F}) = \int_{0}^{0.5 p_{F}} \frac{8 \pi p^2}{h^3}\ dp\]
+    \[ f_{e}(0.5 p_{F}) = \frac{8 \pi}{h^3} \int_{0}^{0.5 p_{F}} p^2 \ dp\]
+    \[ f_{e}(0.5 p_{F}) = \frac{8 \pi}{h^3} \left[ \frac{p^3}{3} \right]_{0}^{0.5 p_{F}}\]
+    \[ f_{e}(0.5 p_{F}) = \frac{8 \pi\ 0.125 p_{F}^{3}}{3h^3}\]
+    \\
+    This shows us that 0.125/1 fraction of the electrons have a momenta less than half the Fermi momentum in a completely degenerate limit.\\ \\
+    (b) From equation (1), we can see there are no electrons that have a momentum greater than the Fermi momentum $p_{F}$. This means the fraction of electrons that have momenta more than double the Fermi momentum is 0. Figure 16.2 is also a great visualization tool to check this. For all values greater than $1 p_{F}$, the function $f_{e}(p)$ goes to zero.
+\end{quote}
+\end{document}
