@@ -1,0 +1,164 @@
+\documentclass[10pt]{article}
+% set this variable to the assignment number
+\def \HWNUM{n}
+\def \Sus{\begin{tikzpicture}
+\amongUsIII[scale=.05]{red}{blue}
+\end{tikzpicture}}
+\newcommand{\bigpare}[1]{\left( {#1}\right)}
+\newcommand{\MatTwo}[4]{\begin{bmatrix}
+{#1} & {#2}\\
+{#3} & {#4}
+\end{bmatrix}}
+\newcommand{\MatThree}[9]{\begin{bmatrix}
+ {#1}&{#2}&{#3}\\
+ {#4}&{#5}&{#6}\\
+ {#7}&{#8}&{#9}
+\end{bmatrix}}
+\newcommand{\VectorTwo}[2]{\begin{bmatrix}
+{#1}\\
+{#2}
+\end{bmatrix}}
+\newcommand{\VectorThree}[3]{\begin{bmatrix}
+{#1}\\
+{#2}\\
+{#3}
+\end{bmatrix}}
+% set this variable to your name
+\def \MYID{Riya Kore}
+\usepackage{tocloft}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eufrak}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{tikz-among-us}
+\usepackage{fancyhdr}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{ gensymb }
+\usepackage{ wasysym }
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{ upgreek }
+\usepackage{mathrsfs} 
+\lstset{ %
+language=python,
+commentstyle=\color{yellow!80!red},
+keywordstyle=\color{blue!50!white},
+stringstyle=\color{green!80!white},
+identifierstyle=\color{red!50!white},
+basicstyle=\small\ttfamily,
+showstringspaces=false
+}
+\topmargin -0.7in
+\oddsidemargin -0.25in
+\evensidemargin -0.25in
+\textwidth 7in
+\textheight 9in
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\title{Astronomy 310 Homework 8}
+\author{\MYID\\
+University of Wisconsin-Madison}
+\date{\today}
+\maketitle
+
+\section*{Problem 1}
+The Sun is often modeled using an n = 3 polytrope model. Here, we will compute an interior model for the Sun using an n = 3 polytrope and then compare the results to the output from the Sun-like MESA-Web model you ran a few weeks ago for a previous homework. For all the steps below, recall that Table 19.1 in the handouts gives critical values for the n = 3 polytrope, and that you can divide $(- z^{2} dw/dz)$ by factors of $z_{s}$ to compute the necessary derivative terms. You may assume the Sun has M = 1.989 x $10^{33}$ g, R = 6.696 x $10^{10}$ cm, and X = 0.7 and Y = 0.3.
+
+\begin{enumerate}[label=(\alph*)]
+
+\item Calculate the central pressure at the core of the Sun (in Ba).
+
+
+\item Calculate the central density at the core of the Sun (in g $cm^{-3}$).
+
+\item Assuming the Sun is a fully-ionized ideal gas, estimate the central temperature in the Sun's core (in K) using the composition given above.
+
+\end{enumerate}
+Solution:\\ \\
+For an n = 3 polytrope, we have been given the following values:\\
+\begin{equation}
+    z_{s} = 6.89685
+\end{equation}
+\[ \left( -z^{2} \frac{dw}{dz}\right)_{z_{s}} = 2.01824 \]
+\[ -(6.89685)^{2} * \frac{dw}{dz} = 2.01824\]
+
+\begin{equation}
+    \frac{dw}{dz} = \frac{-2.01824}{(6.89685)^{2}} = -0.04243
+\end{equation}
+We can use these values to solve the question.\\
+(a) To find the central pressure at the core of the Sun, we can use the following expression:
+\[ P_{c} = \frac{G}{4 \pi (n + 1)} \frac{M^2}{R^4} \left(- \frac{dw}{dz}\right)^{-2}_{z = z_{s}}\]
+\[ P_{c} = \frac{6.67 * 10^{-8}}{4 \pi (3 + 1)}  * \frac{(1.989 * 10^{33})^2}{(6.696 * 10^{10})^4}  * (0.04243)^{-2}\]
+\[ P_{c} = 1.4505 * 10^{17} \ Ba\] \\
+(b) To find the central density at the core of the Sun, we can use the following expression:
+\[ \rho_{c} = \frac{1}{4 \pi} \frac{M}{R^3} \left( \frac{-1}{z} \frac{dw}{dz}\right)^{-1}_{z = z_{s}}\]
+\[ \rho_{c} = \frac{1}{4 \pi} * \frac{1.989 * 10^{33}}{(6.696 * 10^{10})^3} * \left( \frac{-1}{6.89685} * -0.04243\right)^{-1}\]
+\[ \rho_{c} = 85.6951 \  g  \ cm^{-3}\] \\
+(c) If we assume the Sun to be a fully-ionized ideal gas, we can use the ideal gas equation of states to find the central temperature.
+\[ P = n k_{B} T\]
+\[ P_{c} = \left[ \sum_{j} \frac{(1 + \mathscr{L}_j ) \chi_{j}}{\mathcal{A}_{j}} \right] \frac{\rho_{c} k_{B} T}{m_{H}}\]
+Here, $\chi_{j}$ is the mass fraction, $\mathcal{A}_{j}$ is the mass number, and $\mathscr{L}_j$ is the atomic number of the isotope j.
+\[ 1.4505 * 10^{17} = \left[ \frac{2* 0.7}{1} + \frac{3 * 0.3}{4}\right] * \frac{(85.6951)*(1.3807 * 10^{-16}) * T_{c}}{(1.67 * 10^{-24})}\]
+\[ 1.4505 * 10^{17} = (1.625) * \frac{(85.6951)*(1.3807 * 10^{-16}) * T_{c}}{(1.67 * 10^{-24})} \]
+\[ T_{c} = \frac{(1.4505 * 10^{17}) * (1.67 * 10^{-24})}{1.625 * 85.6951 * (1.3807 * 10^{-16})} = 12598693.9\]
+\[ T_{c} \approx 1.26 * 10^7 \ K \]
+
+\section*{Problem 2}
+Using Poly-Web (http://user.astro.wisc.edu/~townsend/ static.php?ref=poly-web), create an n = 3 polytrope model using 500 grid points. The output will be a text file with three columns. The three columns are: $z$, $w(z)$, and $dw/dz$. Using Equation [19.4] and the output from this Poly-Web calculation, create a plot of the Log10 density of the Sun (in Log10[g $cm^{-3}$]) as a function of radius r, where r = 1 corresponds to the Solar surface. Recall that $z/z_{s} = r/R$. \\ \\
+Solution:\\
+The central density for a polytrope is given by the expression:
+\[ \rho_{c} = \frac{1}{4 \pi} \frac{M}{R^3} \left( \frac{-1}{z} \frac{dw}{dz}\right)^{-1}_{z = z_{s}}\]
+Equation 19.4 from the handout gives us:
+\[ w = \left( \frac{\rho}{\rho_{c}}\right)^{1/n}\]
+\[ \rho = w^{n} * \rho_{c} = w^{n} * \frac{1}{4 \pi} \frac{M}{R^3} \left( \frac{-1}{z} \frac{dw}{dz}\right)^{-1}_{z = z_{s}} \]
+\[ \rho = w^{3} * 85.69551\]
+\begin{equation}
+    \log{(\rho)} = 3 * \log{(w)} + \log{(85.69551)}  \tag{1}
+\end{equation}
+Equation (1) is basically what we will use to plot the y-axis.\\
+From the question, we also know that:
+\[ \frac{z}{z_{s}} = \frac{r}{R}\]
+\begin{equation}
+    r = \frac{z}{6.89685} \tag{2}
+\end{equation}
+We will use equation (2) to plot the x-axis.\\ \\
+The plot looks like this:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{hw_8_astron_310_q2.png}
+    \caption{Density as a function of radius for n = 3 polytrope}
+    \label{fig:enter-label}
+\end{figure}
+
+\section*{Problem 3}
+Use either the Sun-like MESA-Web model you created a few weeks age, or create a new model using the defaults on the MESA-Web submission page (http://user.astro.wisc.edu/~townsend/ static.php?ref=mesa-web-submit). The profile with a model stellar age close to the Sun's 4.5 Gyr should be profile8.data. Read in the columns for radius and log($\rho$) from this file and over-plot them on your polytrope solution above. Submit this combined plot with your homework. Briefly comment on the agreement (or not) of the n = 3 polytrope and the full MESA model. Is there a radius where the predicted density of the two models diverge? What do you hypothesize is the cause of this divergence?\\ \\\
+Solution:\\
+From the profile8.data file, if we plot the log($\rho$) vs radius, we get:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{hw_8_astron_310_q3_1.png}
+    \caption{Density as a function of radius for MESA-Web Model}
+    \label{fig:enter-label}
+\end{figure}
+When we combine the two graphs, it looks like this:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{hw_8_astron_310_q3_2.png}
+    \caption{Density as a function of radius for the combined graph}
+    \label{fig:enter-label}
+\end{figure}
+The n = 3 polytrope and the MESA-Web Model agree to some extent. When r = 0.7$R_{\astrosun}$ approximately, the predicted density of the two models diverges. This means that the density is greater than what's predicted by the n = 3 polytrope model. An explanation for this could be that at r = 0.7$R_{\astrosun}$, the sun's convective zone starts and the radiative zone ends. The Polyweb model assumes the whole star to be in hydrostatic equilibrium, but the MESA-Web model takes into account this shift from radiative to convective zone.
+\end{document}

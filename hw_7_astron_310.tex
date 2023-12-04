@@ -1,0 +1,193 @@
+\documentclass[10pt]{article}
+% set this variable to the assignment number
+\def \HWNUM{n}
+\def \Sus{\begin{tikzpicture}
+\amongUsIII[scale=.05]{red}{blue}
+\end{tikzpicture}}
+\newcommand{\bigpare}[1]{\left( {#1}\right)}
+\newcommand{\MatTwo}[4]{\begin{bmatrix}
+{#1} & {#2}\\
+{#3} & {#4}
+\end{bmatrix}}
+\newcommand{\MatThree}[9]{\begin{bmatrix}
+ {#1}&{#2}&{#3}\\
+ {#4}&{#5}&{#6}\\
+ {#7}&{#8}&{#9}
+\end{bmatrix}}
+\newcommand{\VectorTwo}[2]{\begin{bmatrix}
+{#1}\\
+{#2}
+\end{bmatrix}}
+\newcommand{\VectorThree}[3]{\begin{bmatrix}
+{#1}\\
+{#2}\\
+{#3}
+\end{bmatrix}}
+% set this variable to your name
+\def \MYID{Riya Kore}
+\usepackage{tocloft}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eufrak}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{tikz-among-us}
+\usepackage{fancyhdr}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{ gensymb }
+\usepackage{ wasysym }
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{ upgreek }
+\lstset{ %
+language=python,
+commentstyle=\color{yellow!80!red},
+keywordstyle=\color{blue!50!white},
+stringstyle=\color{green!80!white},
+identifierstyle=\color{red!50!white},
+basicstyle=\small\ttfamily,
+showstringspaces=false
+}
+\topmargin -0.7in
+\oddsidemargin -0.25in
+\evensidemargin -0.25in
+\textwidth 7in
+\textheight 9in
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\title{Astronomy 310 Homework 7}
+\author{\MYID\\
+University of Wisconsin-Madison}
+\date{\today}
+\maketitle
+
+\section*{Problem 1}
+Calculate the slope d(log L)/d(log $T_{\text{eff}}$) of the Hayashi line for fully convective stars in which the opacity is independent of pressure and temperature.\\
+\\
+Solution:\\
+The Hayashi track is the track that a pre-main sequence star takes while it moves on the HR diagram before entering the ZAMS. 
+All pre-main sequence stars are fully convective as they undergo Kelvin-Helmholtz contraction and move vertically down in the HR diagram.\\
+The expression for opacity in terms of pressure and temperature is given by (using the generic power law):
+\[ \kappa = \kappa_{0} P^{a}_{phot} T^{b}_{phot}\]
+Here, $\kappa_{0}$, a and b are constants.\\ \\
+The slope of a line in the HR diagram is given by:
+\begin{equation}
+    \frac{d \ log L}{d \ log T_{\text{eff}}} = \frac{d \ \ln{L}}{d \ \ln{T_{\text{eff}}}} = \frac{6 + 22a + 4b}{3a - 1}
+\end{equation}
+Let's assume that the opacity is independent of pressure and temperature, then we can set a and b to 0. We get:
+\[ \kappa = \kappa_{0}\]
+This tells us that the opacity becomes constant if we assume it to be independent of pressure and temperature.\\ \\
+If we plug in a = 0 and b = 0 in equation (1), we get the slope of the line as:
+\[ \frac{d \ log L}{d \ log T_{\text{eff}}} = \frac{6 + 22(0) + 4(0)}{3(0) - 1} = -6\]
+The answer (a slope of -6 on the HR diagram for the Hayashi track) doesn't make sense. This means that our initial assumption was false when we considered the opacity to be independent of pressure and temperature. This draws us to the conclusion that the opacity should be dependent on temperature and pressure to get the right slope of a line on the HR diagram.
+\section*{Problem 2}
+In very massive stars ($M \gtrsim 50 \ M_{\astrosun}$) the radiation pressure is much greater than the gas pressure, and energy is transported primarily by radiation. For such stars,
+\begin{enumerate}[label=(\alph*)]
+    \item Show that the central temperature follows a scaling $T_{c} \sim M^{1/2} / R$ (hint: assume the scaling relations $\rho_{c} \propto M / R^{3}$ and $P_{c} \propto M^{2}/R^{4}$ that apply to polytropes).\\ \\
+    The radiation pressure for a star is given by:
+    \[ P_{rad} = \frac{a T^4}{3}\]
+    At the center of the star, we get the relation:
+    \[ P_{c} = \frac{a T_{c}^4}{3}\]
+    \[ T_{c} = \left( \frac{3P_{c}}{a}\right)^{1/4}\]
+    In the above expression, 3 and a are constants. We can derive a proportionality relation as:
+    \[ T_{c} \propto (P_{c})^{1/4}\]
+    As we know, $P_{c} \propto M^2/R^4$. We can plug this in the above expression to get:
+    \[ T_{c} \propto \left( \frac{M^2}{R^4}\right)^{1/4} = \frac{M^{2/4}}{R^{4/4}} = \frac{M^{1/2}}{R}\]
+    Summarizing this, we get:
+    \[ T_{c} \propto \frac{M^{1/2}}{R}\]
+    Thus, we can say that the temperature follows a scaling relation of $T_{c} \sim M^{1/2}/R$. \\
+    \item Show that $L \propto M$ (hint: follow a similar process to that outlined in Handout 21).\\ \\
+    Equation [12.4] from the handout gives us the radiative diffusion equation.
+    \[ \ell_{rad} = - \frac{16 \pi r^2 a c T^3}{3 \kappa \rho} \frac{\partial T}{\partial R}\]
+    The luminosity for the entire star is basically equal to the surface luminosity L. The density $\rho$ becomes the central density $\rho_{c}$. the radius r becomes R, and the temperature T becomes the central temperature $T_{c}$. Also, $\partial T / \partial R$ becomes $-T_{c}/R$. Substituting all of this in the above equation, we get:
+    \[ L = \frac{16 \pi R^2 a c T_{c}^3}{3 \kappa \rho_{c}} \frac{T_{c}}{R}\]
+    \[ L = \frac{16 \pi R a c T_{c}^4}{3 \kappa \rho_{c}}\]
+    Looking at this expression, 16, $\pi$, a, c, 3, and $\kappa$ are constants. We can get a proportionality relation from this as:
+    \[ L \propto \frac{R T_{c}^4}{ \rho_{c}}\]
+    Substituting the proportionality relation for temperature we got from part (a) and the relation for $\rho_{c}$ given in the question, we get:
+    \[ L \propto R \left( \frac{M^{1/2}}{R} \right)^4 \text{x} \frac{R^3}{M}\]
+    \[ L \propto R \  (\frac{M^2}{R^4})  \ (\frac{R^3}{M})\]
+    \[ L \propto M\]
+    Thus, we get that luminosity is directly proportional to mass for very massive stars. \\ \\
+    \item With this mass-luminosity relation, argue that the main-sequence lifetime of very massive stars is independent of mass. \\ \\
+    A star's main-sequence lifetime is the time period for which the star remains on the main-sequence, i.e. it fuses hydrogen to helium in its core. \\
+    Let's indicate the fraction of the star's mass that gets converted from hydrogen to helium by $f$. The energy released by this conversion per unit mass is given by $e$. Let $\uptau_{MS}$ denote the star's main-sequence lifetime. Equation [21.7] in the handout gives us the relation:
+    \[ f M e = L \uptau_{MS} \]
+    \[ \uptau_{MS} = \frac{f M e}{L}\]
+    From part (b) of the problem, we know that luminosity is directly proportional to the mass of the star (for massive stars). We can substitute this proportionality relation in the above expression to get:
+    \[ \uptau_{MS} \propto \frac{f M e}{M} = f e \]
+    Thus, we get:
+    \[ \uptau_{MS} \propto f e \]
+    From this, we can see that for massive stars, their time on the main-sequence does not depend on the amount of mass they have, meaning $\uptau_{MS}$ is independent of the mass.
+\end{enumerate}
+
+\section*{Problem 3}
+
+\begin{minipage}{0.6\textwidth}
+For each of the following short-hand reactions comprising the CNO cycle, write out the reaction in full, making sure to conserve the baryon number, lepton number and charge, and to have zero new charge on each side of the reaction. Then calculate the total energy released by the reaction (whether as gamma rays, positrons, neutrinos, or kinetic energy), in units of MeV. A table of atomic masses is given to the right; remember that 1 u = 931.49 MeV/$c^2$. Confirm that the total energy released by the cycle adds up to the 26.73 MeV for fusion of four hydrogen atoms into one helium atom.
+\end{minipage}
+\begin{minipage}{0.4\textwidth} % Adjust the width as needed
+    \centering
+    \begin{tabular}{cc}
+    Isotope & Atomic Mass (u) \\
+    \midrule
+    $^{\text{1}}$H & 1.0078250 \\
+    $^{\text{4}}$He & 4.0026033 \\
+    $^{\text{12}}$C & 12.0000000 \\
+    $^{\text{13}}$C & 13.0033548 \\
+    $^{\text{13}}$N & 13.0057386 \\
+    $^{\text{14}}$N & 14.0030740 \\
+    $^{\text{15}}$N & 15.0001089 \\
+    $^{\text{15}}$O & 15.0030654 \\
+    \end{tabular}
+\end{minipage}
+\\ \\
+(i) $^{\text{12}}$C (p, $\gamma$) $^{\text{13}}$N \\
+One Hydrogen nucleus combines with C-12 to give N-13 and a gamma ray.\\
+\[ ^{\text{12}}C  \ +  \ p \longrightarrow  \ ^{\text{13}}N + \ \gamma \]
+The energy release is given by:
+\[ \Delta E_{1} = ((12.0000000 + 1.0078250) - (13.0057386))*931.49 \text{ MeV}  = 1.9435 \text{ MeV} \]
+(ii) $^{\text{13}}$N (., $e^{+}$) $^{\text{13}}$C \\
+N-13 undergoes beta decay to release energy.\\
+\[ ^{\text{13}}N  \ \longrightarrow  \ ^{\text{13}}C \  + e^{+} \]
+The energy release is given by:
+\[ \Delta E_{2} = ((13.0057386) - (13.0033548))*931.49 \text{ MeV}  = 2.2204 \text{ MeV} \]
+(iii) $^{\text{13}}$C (p, $\gamma$) $^{\text{14}}$N \\
+One Hydrogen nucleus combines with C-13 to give N-14 and a gamma ray.\\
+\[ ^{\text{13}}C  \ +  \ p \longrightarrow  \ ^{\text{14}}N + \ \gamma \]
+The energy release is given by:
+\[ \Delta E_{3} = ((13.0033548 + 1.0078250) - (14.0030740))*931.49 \text{ MeV}  = 7.55047 \text{ MeV} \]
+(iv) $^{\text{14}}$N (p, $\gamma$) $^{\text{15}}$O \\
+One Hydrogen nucleus combines with N-14 to give O-15 and a gamma ray.\\
+\[ ^{\text{14}}N  \ +  \ p \longrightarrow  \ ^{\text{15}}O + \ \gamma \]
+The energy release is given by:
+\[ \Delta E_{4} = ((14.0030740 + 1.0078250) - (15.0030654))*931.49 \text{ MeV}  = 7.2969 \text{ MeV} \]
+(v) $^{\text{15}}$O (., $e^{+}$) $^{\text{15}}$N \\
+O-15 undergoes beta decay to release energy.\\
+\[ ^{\text{15}}O  \ \longrightarrow  \ ^{\text{15}}N \  + e^{+} \]
+The energy release is given by:
+\[ \Delta E_{5} = ((15.0030654) - (15.0001089))*931.49 \text{ MeV}  = 2.754 \text{ MeV} \]
+(vi) $^{\text{15}}$N (p, $\alpha$) $^{\text{12}}$C\\ 
+One Hydrogen nucleus combines with N-15 to give C-12 and an alpha particle ($^{\text{4}}$He).\\
+\[ ^{\text{15}}N  \ +  \ p \longrightarrow  \ ^{\text{12}}C + \ \alpha \]
+The energy release is given by:
+\[ \Delta E_{6} = ((15.0001089 + 1.0078250) - (12.0000000 + 4.0026033 ))*931.49 \text{ MeV}  = 4.9654 \text{ MeV} \] \\
+Adding up all the energies, we get:
+\[ \Delta E_{net} = \Delta E_{1} + \Delta E_{2} + \Delta E_{3} + \Delta E_{4} + \Delta E_{5} + \Delta E_{6}\]
+\[ \Delta E_{net} = 1.9435 + 2.2204 + 7.55047 + 7.2969 + 2.754 + 4.9654 = 26.73 \text{ MeV} \] \\
+This confirms that the total energy released by the CNO cycle adds up to 26.73 MeV for fusion of four hydrogen atoms into one helium atom. In these reactions the isotopes of carbon, nitrogen and oxygen act as catalysts.
+
+
+\end{document}
