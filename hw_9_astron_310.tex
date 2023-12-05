@@ -1,0 +1,234 @@
+\documentclass[10pt]{article}
+% set this variable to the assignment number
+\def \HWNUM{n}
+\def \Sus{\begin{tikzpicture}
+\amongUsIII[scale=.05]{red}{blue}
+\end{tikzpicture}}
+\newcommand{\bigpare}[1]{\left( {#1}\right)}
+\newcommand{\MatTwo}[4]{\begin{bmatrix}
+{#1} & {#2}\\
+{#3} & {#4}
+\end{bmatrix}}
+\newcommand{\MatThree}[9]{\begin{bmatrix}
+ {#1}&{#2}&{#3}\\
+ {#4}&{#5}&{#6}\\
+ {#7}&{#8}&{#9}
+\end{bmatrix}}
+\newcommand{\VectorTwo}[2]{\begin{bmatrix}
+{#1}\\
+{#2}
+\end{bmatrix}}
+\newcommand{\VectorThree}[3]{\begin{bmatrix}
+{#1}\\
+{#2}\\
+{#3}
+\end{bmatrix}}
+% set this variable to your name
+\def \MYID{Riya Kore}
+\usepackage{tocloft}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eufrak}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{tikz-among-us}
+\usepackage{fancyhdr}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{ gensymb }
+\usepackage{ wasysym }
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{ upgreek }
+\usepackage{mathrsfs} 
+\lstset{ %
+language=python,
+commentstyle=\color{yellow!80!red},
+keywordstyle=\color{blue!50!white},
+stringstyle=\color{green!80!white},
+identifierstyle=\color{red!50!white},
+basicstyle=\small\ttfamily,
+showstringspaces=false
+}
+\topmargin -0.7in
+\oddsidemargin -0.25in
+\evensidemargin -0.25in
+\textwidth 7in
+\textheight 9in
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\title{Astronomy 310 Homework 9}
+\author{\MYID\\
+University of Wisconsin-Madison}
+\date{\today}
+\maketitle
+
+\section*{Problem 1}
+Figure Fig 1.1 plots the apparent orbits of the primary and secondary star in a visual binary system.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{hw_9_astron_310_question_image.jpg}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{enumerate} [label=(\alph*)]
+
+    \item On a copy of the figure, for each apparent orbit, mark the center of the ellipse and measure the angular semi-major axis ($\alpha_{1}$ and $\alpha_{2}$ respectively) and semi-minor axis ($\beta_{1}$ and $\beta_{2}$), in arcseconds. \\ \\
+    I assumed $\alpha_{1}$ and $\beta_{1}$ to be the semi-major and semi-minor axes of the apparent orbit of the primary star, and $\alpha_{2}$ and $\beta_{2}$ to be the semi-major and semi-minor axes of the apparent orbit of the secondary star respectively. \\
+    Looking at Figure 1.1, I got the following values: \\
+    \[ \alpha_{1} = 0.5 \ Arcseconds \ , \alpha_{2} = 1.25  \ Arcseconds \ , \beta_{1} = 0.4  \ Arcseconds \ , \beta_{2} = 1  \ Arcseconds \]
+    
+    \item What is the mass ratio $M_{2}/M_{1}$ of the system? \\ \\
+    We can calculate the mass ratio $M_{2}/M_{1}$ using the following expression:
+    \[ \frac{\alpha_{1}}{\alpha_{2}} = \frac{M_{2}}{M_{1}}\]
+    \[ \frac{M_{2}}{M_{1}} = \frac{0.5}{1.25} = 0.8\]
+    Thus, the value of the mass ratio of the system is 0.8
+
+    \item Evaluate the eccentricity $e$ of the apparent orbits (you should get the same value for primary and secondary). \\ \\
+    To evaluate the eccentricity $e$ of the apparent orbits, we can use the expression: $b = a \sqrt{1 - e^{2}}$ \\
+    For the primary star, we get:
+    \[ \beta_{1} = \alpha_{1} \sqrt{1 - e^{2}}\]
+    \[ 0.4 = 0.5 \sqrt{1 - e^{2}}\]
+    \[ \left( \frac{4}{5} \right)^{2} = 1 - e^{2} \]
+    \[ e^{2} = 1 - \frac{16}{25}\]
+    \[ e = \frac{3}{5} = 0.6\]
+    For the secondary star, we get:
+    \[ \beta_{2} = \alpha_{2} \sqrt{1 - e^{2}}\]
+    \[ 1 = 1.25 \sqrt{1 - e^{2}}\]
+    \[ \left( \frac{4}{5} \right)^{2} = 1 - e^{2} \]
+    \[ e = \frac{3}{5} = 0.6\]
+    We can see that the eccentricity of both the apparent orbits is the same.
+
+    \item On your copy of the figure, for each apparent orbit, use your knowledge of the semi-major axis ($\alpha_{1}$ and $\alpha_{2}$ respectively) and $e$ to mark the two foci of the ellipse. \\ \\
+    Lets denote the distance from the center to the foci of the apparent orbit of the primary star to be $c_{1}$, and similarly the distance from the center to the foci of the apparent orbit of the secondary star to be $c_{2}$ \\ \\
+    We can calculate $c_{1}$ from this expression:
+    \[ c_{1} = \sqrt{\alpha_{1}^{2} - \beta_{1}^{2}}\]
+    \[ c_{1} = \sqrt{ (0.5)^{2} - (0.4)^{2}}\]
+    \[ c_{1} = 0.3\]
+    We can calculate $c_{2}$ in the same way:
+    \[ c_{2} = \sqrt{\alpha_{2}^{2} - \beta_{2}^{2}}\]
+    \[ c_{2} = \sqrt{ (1.25)^{2} - (1)^{2}}\]
+    \[ c_{2} = 0.75\]
+    With these values, we can mark the two foci of the ellipse.
+
+    \item What piece of evidence suggests that we are viewing the system face-on? \\ \\
+    A visual binary is being seen face on if the apparent foci coincide. One of the foci of the apparent orbits (the right one of the primary star and the left one of the secondary star) do coincide. This suggests that we are viewing the system face-on.
+
+    \item If the parallax of the system is 0.05$''$, what is the distance $d$ to the system, in parsecs? \\ \\
+    To find the distance in parsecs, we can use the following expression:
+    \[ d  \ (in  \ parsecs) = \frac{1}{parallax  \ (in \  arcseconds)}\]
+    \[ d  \  (in \  parsecs ) = \frac{1}{0.05''}\]
+    \[ d  \  (in \  parsecs ) = 20  \ pc \]
+    The distance $d$ to the system is 20 pc.
+
+    \item For each orbit, what is the linear semi-major axis ($a_{1}$ and $a_{2}$ respectively), in AU? \\ \\
+    To find $a_{1}$ we can use the following expression:
+    \[ \frac{a_{1}}{1 \ AU} = \frac{\alpha_{1}}{1 ''} \frac{d}{1 \  pc}\]
+    \[ \frac{a_{1}}{1 \ AU} = \frac{0.5 ''}{1''} \frac{20 \ pc}{1 \ pc}\]
+    \[ a_{1} = 10 \ AU\]
+    Similarly, for $a_{2}$ we get:
+    \[ \frac{a_{2}}{1 \ AU} = \frac{\alpha_{2}}{1 ''} \frac{d}{1 \  pc} \]
+    \[ \frac{a_{2}}{1 \ AU} = \frac{1.25 ''}{1''} \frac{20 \ pc}{1 \ pc}\]
+    \[ a_{2} = 25 \ AU\]
+    \item What is the overall semi-major axis $a$ of the system? \\ \\
+    The expression to find the overall semi-major axis of the system is given by $a = a_{1} + a_{2}$
+    \[ a = a_{1} + a_{2} = 10 \ AU + 25 \ AU = 35 \ AU\]
+
+    \item If the period of the orbit is 55 yr, what is the combined mass $M_{1} + M_{2}$ of the system? \\ \\
+    We can calculate the combined mass $M_{1} + M_{2}$ of the system from the following equation:
+    \[ P^{2} = \frac{4 \pi^{2}}{G (M_{1} + M_{2})} a^{3}\]
+    Here, if $P$ is in years, $M$ is in solar masses, and $a$ is in astronomical units, then the value of $G$ becomes $4 \pi^{2}$
+    Thus, rearranging the above equation, we get:
+    \[ M_{1} + M_{2} = \frac{4 \pi^{2}  \ a^{3}}{G  \ P^{2}}\]
+    \[ M_{1} + M_{2} = \frac{(35)^{3}}{(55)^{2}}\]
+    \[ M_{1} + M_{2} = 14.1735 \  M_{\astrosun}\]
+    The combined mass of the system is $14.1735 \  M_{\astrosun} $
+
+    \item What are the individual masses, $M_{1}$ and $M_{2}$, of the stars? \\ \\
+    We can get $M_{2}$ using the following expression:
+    \[ a_{1} = \frac{M_{2}}{M_{1} + M_{2}} a\]
+    \[ 10 \ AU = \frac{M_{2}}{14.1735 \ M_{\astrosun}} 35 \ AU\]
+    \[ M_{2} = \frac{10 * 14.1735}{35}\]
+    \[ M_{2} = 4.0496 \ M_{\astrosun}\]
+    We can calculate the same thing for $M_{1}$
+    \[ a_{2} = \frac{M_{1}}{M_{1} + M_{2}} a\]
+    \[ 25 \ AU = \frac{M_{1}}{14.1735 \ M_{\astrosun}} 35 \ AU\]
+    \[ M_{1} = \frac{25 * 14.1735}{35}\]
+    \[ M_{1} = 10.1239 \ M_{\astrosun}\]
+    
+\end{enumerate}
+
+\section*{Problem 2}
+Observations of an spectroscopic/eclipsing binary system, having a period of 5 d, show sinusoidal radial velocity curves for each star. The primary has a velocity semi-amplitude of 120 km $s^{-1}$, and the secondary 200 km $s^{-1}$. \\ \\
+Based on these observations, determine the following quantities (if you lack the data to evaluate a given quantity, answer 'insufficient data'):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{hw_9_astron_310_q2.png}
+    \label{fig:enter-label}
+\end{figure}
+
+The figure above shows the radial velocity curves with velocity (in km/s) on the y axis and time period (in days) on the x axis. The red curve corresponds to the primary and the purple curve corresponds to the secondary. I used the equation $A \ sin(\frac{2 \pi x}{5d})$, where d = 1 to plot the curves.
+
+\begin{enumerate} [label=(\alph*)]
+    \item the mass ratio $M_{2}/M_{1}$ \\ \\
+    We can determine the mass ratio of the stars in a spectroscopic binary from the semi-amplitude $v_{r}$ of the radial velocity:
+    \[ \frac{M_{2}}{M_{1}} = \frac{v_{r,1}}{v_{r,2}} = \frac{120}{200} = 0.6\]
+    Thus, the mass ratio of the system is 0.6
+
+    \item the mass sum $M_{1} + M_{2}$ \\ \\
+    To find the combined mass of the system, we can use the following expression:
+    \[ M_{1} + M_{2} = \frac{(v_{1} + v_{2})^{3} P}{2 \pi G sin^{3}i}\]
+    The system has a period of 5 days = 432000 seconds.\\
+    $v_{1}$ = 120 km $s^{-1}$ = $1.2 * 10^{7}$ cm/s \\
+    $v_{2}$ = 200 km $s^{-1}$ = $2 * 10^{7}$ cm/s
+    \[ M_{1} + M_{2} = \frac{(1.2*10^{7} + 2 * 10^{7})^{3}* 432000}{2 \pi (6.67 * 10^{-8}) * (1)^{3}}\]
+    \[ M_{1} + M_{2} = 3.3778 * 10^{34} \ g\]
+    The mass sum $M_{1} + M_{2}$ of the system is $3.3778 * 10^{34}$ grams.
+
+    \item the inclination $i$ \\ \\
+    The system given to us is an eclipsing binary system, which means that the orbits must be close to edge-on. This implies that $ i \approx 90\degree$. Thus, we can assume the inclination angle to be $90 \degree$
+
+    \item the eccentricity $e$ \\ \\
+    Handout 32, under Observing Spectroscopic Binaries, it is mentioned that the shape of the radial velocity curve provides information about eccentricity: A sinusoidal curve indicates a circular orbit, which means e = 0. The question tells us that the curves for each star are sinusoidal.\\
+    So, the eccentricity $e = 0$
+\end{enumerate}
+
+\section*{Problem 3}
+Submit three MESA-Web calculations, for masses 5$M_{\astrosun}$, 1$M_{\astrosun}$ and 0.2$M_{\astrosun}$. In each case, set the following parameters on the MESA-Web submission page:
+\begin{itemize}
+    \item Mass (in the initial Properties group) to the stellar mass in $M_{\astrosun}$.
+
+    \item Convective Premixing (in the Convective group) to 'Enabled'.
+
+    \item Quantity (in the Custom Stopping Condition group) to 'central hydrogen mass fraction lower limit'.
+
+    \item Value (in the Custom Stopping Condition group) to 0.35
+\end{itemize}
+(leave other parameters at their defaults). This set of parameters will ensure that the calculation stops about half-way through the main sequence phase, when the central hydrogen abundance has dropped to half of its initial value.\\ \\
+Then, use data from the final (highest-numbered) profile file of each MESA-Web run to plot the hydrogen mass fraction X (on the vertical axis) versus fractional mass m/M (on the horizontal axis). All three stars should appear on the same plot. With reference to the discussion on the second page of Handout 14, explain the differences you see in the three curves in the plot.\\ \\
+Implementation notes: assuming you have read profile data into variable $prof\_data$, you can access the X values as $prof\_data['h1']$, $m$ values as $prof\_data['mass']$ and M values as $prof\_data['star\_mass']$. \\ \\
+Solution :
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{hw_9_astron_310_q3.png}
+    \caption{Hydrogen Mass Fraction vs Fractional mass for three different star masses}
+    \label{fig:enter-label}
+\end{figure}
+In radiative regions. there is no exchange of matter between different mass shells, then the hydrogen mass fraction can change only if the nuclear reactions create or destroy hydrogen nuclei. \\
+In convective regions, we deal with the much more important effect of mixing due to turbulent convective motion, a process that is very rapid compared to the extremely slow change of the chemical composition produced by nuclear reactions. Therefore, we can assume that the composition in a convective region always remains homogeneous.\\
+A low mass model star shows a large opacity in the envelope and the core, this explains why the star is convective throughout their entire interior. Thus, looking at the green line on the graph, we can tell that the mass fraction remains the same pretty much throughout the entire star, having a slight decrease at the center because of the fusion process.\\
+Intermediate mass stars on the main sequence share the same general structural layout as the sun-similar model consisting of a radiative core and a convective envelope. This explains the rise in the hydrogen mass fraction in the radiative region. As we go to the convective region, the mass fraction goes on to become a constant. \\
+High mass stars on the main sequence configuration comprise of a convective core and a radiative envelope. Thus, for the black line, we see that initially, the hydrogen mass fraction remains fairly constant, and then shoots up when the radiative envelope starts. It then comes to a stable fractional mass where fusion is apparently not taking place.
+
+\end{document}
